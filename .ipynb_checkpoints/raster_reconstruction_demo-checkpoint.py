@@ -12,7 +12,7 @@ from raster_reconstruction_classes import *
 # Specify input files and parameters
 rotation_filename = './Matthews_etal_GPC_2016_410-0Ma_GK07.rot'
 static_polygon_filename = './Matthews_etal_GPC_2016_ContinentalPolygons.gpmlz'
-raster_file = './earth_relief_10m.grd'
+raster_file = './earth_relief_10m.nc'
 
 # output files will be based on this filename, with the reconstruction time added
 # through the format statement
