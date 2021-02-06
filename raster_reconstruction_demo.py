@@ -57,8 +57,6 @@ for reconstruction_time in reconstruction_times:
     res = xyz2grd(reconstructed_point_lons,reconstructed_point_lats,reconstructed_point_zvals,
                   grid_longitudes,grid_latitudes)
 
-    #ds = xr.DataArray(res, coords=[('y',grid_latitudes), ('x',grid_longitudes)], name='z')
-    #ds.to_netcdf(output_file_template.format(reconstruction_time), format='NETCDF4')
     write_netcdf_grid(output_file_template.format(reconstruction_time), 
                       grid_longitudes, grid_latitudes, res, 
                       xname='x', yname='y', zname='z', format='NETCDF4')             
