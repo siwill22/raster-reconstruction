@@ -27,8 +27,6 @@ reconstruction_model = ReconstructionModel('M2016')
 reconstruction_model.add_rotation_model(rotation_filename)
 reconstruction_model.add_static_polygons(static_polygon_filename)
 
-ptopo = GPlatesRaster(raster_file)
-
 reconstruction_times = np.arange(min_reconstruction_time,
                                  max_reconstruction_time+reconstruction_time_step,
                                  reconstruction_time_step)
@@ -41,6 +39,10 @@ grid_latitudes = np.arange(-90.,90.0001,grid_sampling)
 for reconstruction_time in reconstruction_times:
     
     print('\nWorking on time {:f} Ma'.format(reconstruction_time))
+    
+    # More generally, this could be a reference to a time-dependent raster series with reconstruction
+    # times corresponding to the values being looped through 
+    ptopo = GPlatesRaster(raster_file)
     
     from_time = reconstruction_time
     to_time = 0
